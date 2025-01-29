@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  rabbit:
+    image: rabbitmq:4.0.5-management
+    hostname: localhost
+    volumes:
+      - rabbit_data:/var/lib/rabbitmq/
+      - rabbit_log:/var/log/rabbitmq
+      - ./config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./config/definitions.json:/etc/rabbitmq/definitions.json
+    ports:
+      - 15672:15672
+      - 5672:5672
+    deploy:
+      replicas: 1
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_DEFAULT_VHOST: "/lettuce"
+volumes:
+  rabbit_data:
+  rabbit_log:
+
+networks:
+  default:
+    driver: bridge

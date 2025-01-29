@@ -1,0 +1,5 @@
+project:
+  repo_name: lettuce
+  repo_shortname: lettuce
+  repo_type: lib
+  features:

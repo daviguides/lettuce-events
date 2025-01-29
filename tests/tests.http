@@ -1,0 +1,30 @@
+### Test Registration Endpoint
+
+POST http://localhost:8012/registrations HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Davi",
+    "birthdate": "1988-12-11"
+}
+
+
+### Test Purchase Endpoint
+
+POST http://localhost:8012/purchases HTTP/1.1
+Content-Type: application/json
+
+{
+    "product": "Lettuce",
+    "quantity": 3,
+    "customer": "Davi"
+}
+
+### Test Payment Endpoint
+POST http://localhost:8012/payments HTTP/1.1
+Content-Type: application/json
+
+{
+    "customer": "Adan",
+    "amount": 1545.95
+}
